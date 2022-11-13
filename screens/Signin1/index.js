@@ -6,8 +6,7 @@ const pressed = () => {
 };
 
 const SignIn = () => {
-  return (
-    <View style={styles.conatainer}>
+  return <View style={styles.conatainer}>
       <View style={styles.signinContainer}>
         <Text style={styles.signinText}>Sign in</Text>
       </View>
@@ -23,8 +22,7 @@ const SignIn = () => {
           <Button onPress={pressed} height={50} borderWidth={1} backgroundColor='#FFF' color='#000'>Log In</Button>
         </View>
       </View>
-    </View>
-  );
+    </View>;
 };
 
 const styles = StyleSheet.create({
@@ -72,24 +70,22 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     height: "100%"
   }
-
 });
-
 export default SignIn;
 
-const Button = (props) => {
-  return (
-    <TouchableHighlight onPress={props.onPress} underlayColor='#DDDDDD'>
+const Button = props => {
+  return <TouchableHighlight onPress={props.onPress} underlayColor='#DDDDDD'>
       <View style={[btnStyles.button, {
-        backgroundColor: props.backgroundColor ? props.backgroundColor : "#000000",
-        height: props.height ? props.height : 49,
-        borderWidth: props.borderWidth ? props.borderWidth : 0,
-        borderColor: props.borderColor ? props.borderColor : "#000000"
-      }]}>
-        <Text style={[btnStyles.text, { color: props.color ? props.color : "#ffffff" }]}>{props.children}</Text>
+      backgroundColor: props.backgroundColor ? props.backgroundColor : "#000000",
+      height: props.height ? props.height : 49,
+      borderWidth: props.borderWidth ? props.borderWidth : 0,
+      borderColor: props.borderColor ? props.borderColor : "#000000"
+    }]}>
+        <Text style={[btnStyles.text, {
+        color: props.color ? props.color : "#ffffff"
+      }]}>{props.children}</Text>
       </View>
-    </TouchableHighlight>
-  );
+    </TouchableHighlight>;
 };
 
 const btnStyles = StyleSheet.create({
